@@ -1,3 +1,4 @@
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { Calendar, MapPin, Shield, Clock } from "lucide-react";
 import ClubLogo from "./ClubLogo";
 
@@ -135,11 +136,16 @@ const MatchCard = ({ match, delay }: { match: UpcomingMatch; delay: number }) =>
 );
 
 const UpcomingMatches = () => {
+  const { ref, visible } = useScrollReveal();
   const classicMatch = fecha7Matches.find((m) => m.isClassic);
   const regularMatches = fecha7Matches.filter((m) => !m.isClassic);
 
   return (
-    <section id="proximos-partidos" className="section-padding">
+    <section
+      ref={ref}
+      id="proximos-partidos"
+      className={`section-padding transition-all duration-700 ${visible ? "animate-fade-up" : "opacity-0"}`}
+    >
       <div className="container mx-auto">
         {/* Header */}
         <div className="text-center mb-8">
@@ -150,10 +156,10 @@ const UpcomingMatches = () => {
             </span>
           </div>
           <h2 className="font-heading text-3xl md:text-5xl font-bold uppercase tracking-tight text-foreground">
-            Próximos Eventos — Fecha 7
+            Próximos Eventos — Fecha 8
           </h2>
           <p className="text-muted-foreground text-sm mt-3 max-w-xl mx-auto">
-            Domingo 19 de abril de 2026 — Liga Deportiva de Piribebuy
+            Domingo 26 de abril de 2026 — Liga Deportiva de Piribebuy
           </p>
           <div className="flex flex-wrap items-center justify-center gap-3 mt-4">
             <span className="inline-flex items-center gap-1.5 glass px-3 py-1.5 rounded-full text-xs text-muted-foreground">

@@ -1,3 +1,4 @@
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useState } from "react";
 import { fixtures } from "@/data/fixtures";
 import { CalendarDays, ChevronDown, ChevronUp } from "lucide-react";
@@ -6,9 +7,14 @@ const FixtureSection = () => {
   const [activeSerie, setActiveSerie] = useState(0);
   const [expandedRound, setExpandedRound] = useState<number | null>(null);
   const serie = fixtures[activeSerie];
+  const { ref, visible } = useScrollReveal();
 
   return (
-    <section id="fixture" className="section-padding">
+    <section
+      ref={ref}
+      id="fixture"
+      className={`section-padding transition-all duration-700 ${visible ? "animate-fade-up" : "opacity-0"}`}
+    >
       <div className="container mx-auto">
         <div className="text-center mb-8">
           <div className="inline-flex items-center gap-2 mb-3">

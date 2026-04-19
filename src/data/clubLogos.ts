@@ -33,6 +33,7 @@ export const clubLogos: Record<string, string> = {
   "Sportivo Itaguyrá": itaguyra,
   "Itaguyra": itaguyra,
   "Itaguyrá": itaguyra,
+  "Sp. Itaguyrá": itaguyra,
 
   // ── Libertad Ojopoi ──────────────────────────────────────────
   "Libertad Ojopoi": libertadOjopoi,
@@ -86,6 +87,7 @@ export const clubLogos: Record<string, string> = {
   // ── 13 de Junio CC ───────────────────────────────────────────
   "13 de Junio C.C.": treceDeJunioCC,
   "13 de Junio (C.C.)": treceDeJunioCC,
+  "13 de Junio CC": treceDeJunioCC,
   "13 de Junio": treceDeJunioCC,
 
   // ── 12 de Agosto ─────────────────────────────────────────────

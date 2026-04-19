@@ -3,6 +3,7 @@ import { standingsPrincipal, standingsJuvenil, standingsJuvenilD, type TeamStand
 import { Trophy } from "lucide-react";
 import ClasificadosTop10 from "./ClasificadosTop10";
 import ClubLogo from "./ClubLogo";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const tabs = [
   { id: "principal", label: "Principal", data: standingsPrincipal },
@@ -72,9 +73,14 @@ const StandingsTable = ({ data, showGoals }: { data: TeamStanding[]; showGoals: 
 const StandingsSection = () => {
   const [activeTab, setActiveTab] = useState("principal");
   const currentTab = tabs.find((t) => t.id === activeTab)!;
+  const { ref, visible } = useScrollReveal();
 
   return (
-    <section id="posiciones" className="section-padding">
+    <section
+      ref={ref}
+      id="posiciones"
+      className={`section-padding transition-all duration-700 ${visible ? "animate-fade-up" : "opacity-0"}`}
+    >
       <div className="container mx-auto">
         <div className="text-center mb-8">
           <div className="inline-flex items-center gap-2 mb-3">
