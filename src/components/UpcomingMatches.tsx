@@ -112,13 +112,6 @@ const MatchCard = ({ match, delay }: { match: UpcomingMatch; delay: number }) =>
     {/* Times */}
     <div className="space-y-1.5 border-t border-border/30 pt-3 mb-3">
       <div className="flex items-center justify-between text-xs gap-2">
-        <span className="text-muted-foreground shrink-0">Juvenil</span>
-        <span className="font-heading font-bold text-foreground flex items-center gap-1">
-          <Clock className="w-2.5 h-2.5 text-secondary shrink-0" />
-          {match.juvenilTime}
-        </span>
-      </div>
-      <div className="flex items-center justify-between text-xs gap-2">
         <span className="text-muted-foreground shrink-0">Primera</span>
         <span className="font-heading font-bold text-secondary flex items-center gap-1">
           <Clock className="w-2.5 h-2.5 text-secondary shrink-0" />
@@ -163,10 +156,6 @@ const UpcomingMatches = () => {
             Domingo 19 de abril de 2026 — Liga Deportiva de Piribebuy
           </p>
           <div className="flex flex-wrap items-center justify-center gap-3 mt-4">
-            <span className="inline-flex items-center gap-1.5 glass px-3 py-1.5 rounded-full text-xs text-muted-foreground">
-              <Clock className="w-3 h-3 text-secondary shrink-0" />
-              Juvenil: 13:30 h
-            </span>
             <span className="inline-flex items-center gap-1.5 glass px-3 py-1.5 rounded-full text-xs text-muted-foreground">
               <Clock className="w-3 h-3 text-secondary shrink-0" />
               Primera: 15:30 h
@@ -237,7 +226,7 @@ const UpcomingMatches = () => {
               } as React.CSSProperties}
             >
               {[
-                { icon: Clock, label: "Horarios", value: "13:30 / 15:30 h" },
+                { icon: Clock, label: "Horario Primera", value: "15:30 h" },
                 { icon: MapPin, label: "Estadio", value: "Sport San Blas" },
                 { icon: Shield, label: "Árbitro", value: "Círculo J.A. Saldívar" },
               ].map(({ icon: Icon, label, value }, i) => (

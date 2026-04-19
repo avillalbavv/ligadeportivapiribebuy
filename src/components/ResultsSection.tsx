@@ -19,12 +19,14 @@ const resultsPrimera: MatchResult[] = [
 ];
 
 const resultsJuvenil: MatchResult[] = [
-  { home: "13 de Junio C.C.", away: "Juventud Cord.", homeGoals: 2, awayGoals: 4 },
-  { home: "Libertad Ojopoi", away: "Gral. Caballero", homeGoals: 0, awayGoals: 1 },
-  { home: "3 de Febrero", away: "Capitán Cristaldo", homeGoals: 1, awayGoals: 3 },
-  { home: "1° de Marzo", away: "Guaraní", homeGoals: 4, awayGoals: 2 },
-  { home: "12 de Agosto", away: "Sport San Blas", homeGoals: 3, awayGoals: 1 },
-  { home: "15 de Agosto", away: "Independiente", homeGoals: 0, awayGoals: 0 },
+  { home: "Juventud", away: "Sol de Mayo", homeGoals: 0, awayGoals: 0 },
+  { home: "Gral. Caballero", away: "13 de Junio C.C.", homeGoals: 0, awayGoals: 1 },
+  { home: "Sport Unión", away: "3 de Febrero", homeGoals: 3, awayGoals: 1 },
+  { home: "Capitán Cristaldo", away: "Guaraní", homeGoals: 5, awayGoals: 1 },
+  { home: "Sport San Blas", away: "15 de Agosto", homeGoals: 2, awayGoals: 1 },
+  { home: "Mcal. Estigarribia", away: "12 de Agosto", homeGoals: 1, awayGoals: 2 },
+  { home: "Itaguyra", away: "13 de Junio SA", homeGoals: 1, awayGoals: 2 },
+  { home: "Libertad Y", away: "Humaitá", homeGoals: 1, awayGoals: 2 },
 ];
 
 const MatchGrid = ({ results }: { results: MatchResult[] }) => (
@@ -83,10 +85,10 @@ const ResultsSection = () => {
             </span>
           </div>
           <h2 className="font-heading text-3xl md:text-5xl font-bold uppercase tracking-tight text-foreground">
-            Resultados — Fecha 6
+            Resultados — Fecha 6 / Fecha 7
           </h2>
           <p className="text-muted-foreground text-sm mt-2">
-            Campeonato Liga Deportiva de Piribebuy 2026 — Martes 14 de Abril
+            Primera: Fecha 6 (14 Abr) · Juvenil: Fecha 7 (19 Abr) — Campeonato L.D.P. 2026
           </p>
         </div>
 
