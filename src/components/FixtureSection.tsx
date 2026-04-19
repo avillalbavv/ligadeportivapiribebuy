@@ -4,7 +4,7 @@ import { CalendarDays, ChevronDown, ChevronUp } from "lucide-react";
 
 const FixtureSection = () => {
   const [activeSerie, setActiveSerie] = useState(0);
-  const [expandedRound, setExpandedRound] = useState<number | null>(0);
+  const [expandedRound, setExpandedRound] = useState<number | null>(null);
   const serie = fixtures[activeSerie];
 
   return (
@@ -25,7 +25,7 @@ const FixtureSection = () => {
             {fixtures.map((f, i) => (
               <button
                 key={f.serie}
-                onClick={() => { setActiveSerie(i); setExpandedRound(0); }}
+                onClick={() => { setActiveSerie(i); setExpandedRound(null); }}
                 className={`px-4 md:px-6 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
                   activeSerie === i
                     ? "bg-primary text-primary-foreground shadow-md"
