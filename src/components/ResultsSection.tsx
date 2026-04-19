@@ -19,6 +19,8 @@ const resultsPrimera: MatchResult[] = [
   { home: "Capitán Cristaldo",     away: "Guaraní",          homeGoals: 0, awayGoals: 0 },
   { home: "Sport San Blas",        away: "15 de Agosto",     homeGoals: 3, awayGoals: 0, note: "Suspendido (min. 28 ST)" },
   { home: "Mcal. Estigarribia",    away: "12 de Agosto",     homeGoals: 1, awayGoals: 2 },
+  { home: "Sportivo Itaguyrá",     away: "13 de Junio S.A.", homeGoals: 2, awayGoals: 1 },
+  { home: "Libertad Yrugua",       away: "Humaitá",          homeGoals: 3, awayGoals: 3 },
 ];
 
 // Séptima fecha — Juvenil (19 Abr 2026)
