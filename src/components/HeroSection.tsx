@@ -8,6 +8,8 @@ const HeroSection = () => {
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url(${heroBg})` }}
+        role="img"
+        aria-label="Fondo de cancha de fútbol de Piribebuy"
       />
       <div className="absolute inset-0" style={{ background: "var(--gradient-hero)", opacity: 0.92 }} />
       <div className="absolute inset-0 animate-shimmer" />

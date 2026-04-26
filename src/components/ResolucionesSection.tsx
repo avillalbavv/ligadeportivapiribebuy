@@ -29,6 +29,13 @@ const ResolucionesSection = () => {
           </p>
         </div>
 
+        {/* Aviso institucional — resoluciones */}
+        <p className="text-xs text-muted-foreground/60 text-center max-w-2xl mx-auto mb-6 leading-relaxed border border-border/20 rounded-lg px-4 py-3 bg-muted/10">
+          Las resoluciones publicadas en esta sección corresponden a documentos oficiales provistos o
+          aprobados por la Liga Deportiva de Piribebuy. Su contenido, datos, nombres, sanciones y
+          disposiciones son responsabilidad institucional de la Liga.
+        </p>
+
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
           {resolutions.map((res) => (
             <div
