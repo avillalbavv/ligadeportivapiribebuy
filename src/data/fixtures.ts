@@ -82,37 +82,37 @@ export const series = [
 ];
 
 export const upcomingMatches = [
-  { home: "Libertad Ojopoi", away: "Juventud Cord.", date: "Dom 05 Abr", serie: "Serie A" },
-  { home: "Sol de Mayo", away: "13 de Junio C.C.", date: "Dom 05 Abr", serie: "Serie A" },
-  { home: "Capitán Cristaldo", away: "Sport Unión", date: "Dom 05 Abr", serie: "Serie B" },
-  { home: "1° de Marzo", away: "3 de Febrero", date: "Dom 05 Abr", serie: "Serie B" },
-  { home: "Independiente", away: "Sport San Blas", date: "Dom 05 Abr", serie: "Serie C" },
-  { home: "Mcal. Estigarribia", away: "15 de Agosto", date: "Dom 05 Abr", serie: "Serie C" },
-  { home: "13 de Junio S.A.", away: "Humaitá", date: "Dom 05 Abr", serie: "Serie D" },
-  { home: "Libertad Yrugua", away: "Sportivo Itaguyrá", date: "Dom 05 Abr", serie: "Serie D" },
+  { home: "Juventud", away: "Libertad O", date: "Dom 03 May", serie: "Serie A" },
+  { home: "13 de Junio CC", away: "Sol de Mayo", date: "Dom 03 May", serie: "Serie A" },
+  { home: "Sport Unión", away: "Capitán Cristaldo", date: "Dom 03 May", serie: "Serie B" },
+  { home: "3 de Febrero", away: "1° de Marzo", date: "Dom 03 May", serie: "Serie B" },
+  { home: "Sport San Blas", away: "Independiente", date: "Dom 03 May", serie: "Serie C" },
+  { home: "15 de Agosto", away: "Mcal Estigarribia", date: "Dom 03 May", serie: "Serie C" },
+  { home: "Humaitá", away: "13 de Junio SA", date: "Dom 03 May", serie: "Serie D" },
+  { home: "Itaguyra", away: "Libertad Y", date: "Dom 03 May", serie: "Serie D" },
 ];
 
 export const news = [
   {
     id: 1,
-    title: "Comunicado oficial: postergación de la 6ª fecha",
-    summary: "Los encuentros de la 6ª fecha fueron postergados por inconvenientes climáticos. La nueva fecha es el martes 14 de abril.",
-    date: "12 Abr 2026",
+    title: "¡Todo se define el domingo! — Décima y última fecha",
+    summary: "11 clubes aún tienen posibilidades de clasificar. La décima fecha definirá quiénes avanzan a la siguiente etapa del Campeonato 2026 de la Liga Deportiva de Piribebuy.",
+    date: "01 May 2026",
     category: "Oficial",
   },
   {
     id: 2,
-    title: "Sport Unión lidera con paso perfecto",
-    summary: "Sport Unión lidera la categoría principal con 12 puntos al cierre de la 5ª fecha.",
-    date: "05 Abr 2026",
+    title: "Cinco clasificados al cierre de la novena fecha",
+    summary: "Sport Unión, Guaraní, Juventud Cordillerana, Sport San Blas y 12 de Agosto aseguraron su lugar en la siguiente etapa.",
+    date: "30 Abr 2026",
     category: "Principal",
   },
   {
     id: 3,
-    title: "Fixture completo confirmado",
-    summary: "Las 4 series del campeonato 2026 ya cuentan con fixture completo y recalendarizado.",
-    date: "01 Mar 2026",
-    category: "Institucional",
+    title: "Resultados — Novena Fecha",
+    summary: "Sport Unión goleó 7-1 a 1° de Marzo. Guaraní 4-1 a 3 de Febrero. 15 de Agosto 1-0 a 12 de Agosto. Empates en Sol de Mayo vs Gral Caballero y Libertad O vs 13 de Junio CC.",
+    date: "30 Abr 2026",
+    category: "Resultados",
   },
 ];
 

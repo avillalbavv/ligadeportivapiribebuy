@@ -11,28 +11,24 @@ interface MatchResult {
   note?: string;
 }
 
-// Séptima fecha — Primera Categoría (19 Abr 2026)
+// Novena fecha — Primera Categoría (30 Abr 2026)
 const resultsPrimera: MatchResult[] = [
-  { home: "Juventud Cordillerana", away: "Sol de Mayo",       homeGoals: 2, awayGoals: 1 },
-  { home: "Gral. Caballero",       away: "13 de Junio C.C.", homeGoals: 2, awayGoals: 1 },
-  { home: "Sport Unión",           away: "3 de Febrero",     homeGoals: 5, awayGoals: 1 },
-  { home: "Capitán Cristaldo",     away: "Guaraní",          homeGoals: 0, awayGoals: 0 },
-  { home: "Sport San Blas",        away: "15 de Agosto",     homeGoals: 3, awayGoals: 0, note: "Suspendido (min. 28 ST)" },
-  { home: "Mcal. Estigarribia",    away: "12 de Agosto",     homeGoals: 1, awayGoals: 2 },
-  { home: "Sportivo Itaguyrá",     away: "13 de Junio S.A.", homeGoals: 2, awayGoals: 1 },
-  { home: "Libertad Yrugua",       away: "Humaitá",          homeGoals: 3, awayGoals: 3 },
+  { home: "Sol de Mayo",       away: "Gral Caballero",      homeGoals: 2, awayGoals: 2 },
+  { home: "Libertad O",        away: "13 de Junio CC",      homeGoals: 3, awayGoals: 3 },
+  { home: "1° de Marzo",       away: "Sport Unión",         homeGoals: 1, awayGoals: 7 },
+  { home: "Guaraní",           away: "3 de Febrero",        homeGoals: 4, awayGoals: 1 },
+  { home: "Independiente",     away: "Mcal. Estigarribia",  homeGoals: 2, awayGoals: 2 },
+  { home: "15 de Agosto",      away: "12 de Agosto",        homeGoals: 1, awayGoals: 0 },
 ];
 
-// Séptima fecha — Juvenil (19 Abr 2026)
+// Novena fecha — Juvenil (30 Abr 2026)
 const resultsJuvenil: MatchResult[] = [
-  { home: "Juventud",          away: "Sol de Mayo",      homeGoals: 0, awayGoals: 0 },
-  { home: "Gral. Caballero",   away: "13 de Junio C.C.", homeGoals: 0, awayGoals: 1 },
-  { home: "Sport Unión",       away: "3 de Febrero",     homeGoals: 3, awayGoals: 1 },
-  { home: "Capitán Cristaldo", away: "Guaraní",          homeGoals: 5, awayGoals: 1 },
-  { home: "Sport San Blas",    away: "15 de Agosto",     homeGoals: 2, awayGoals: 1 },
-  { home: "Mcal. Estigarribia",away: "12 de Agosto",     homeGoals: 1, awayGoals: 2 },
-  { home: "Itaguyrá",          away: "13 de Junio SA",   homeGoals: 1, awayGoals: 2 },
-  { home: "Libertad Y",        away: "Humaitá",          homeGoals: 1, awayGoals: 2 },
+  { home: "Sol de Mayo",       away: "Gral Caballero",      homeGoals: 1, awayGoals: 1 },
+  { home: "Libertad O",        away: "13 de Junio CC",      homeGoals: 1, awayGoals: 0 },
+  { home: "1° de Marzo",       away: "Sport Unión",         homeGoals: 1, awayGoals: 4 },
+  { home: "Guaraní",           away: "3 de Febrero",        homeGoals: 2, awayGoals: 2 },
+  { home: "Independiente",     away: "Mcal. Estigarribia",  homeGoals: 0, awayGoals: 0 },
+  { home: "15 de Agosto",      away: "12 de Agosto",        homeGoals: 1, awayGoals: 3 },
 ];
 
 const MatchGrid = ({ results }: { results: MatchResult[] }) => (
@@ -49,7 +45,6 @@ const MatchGrid = ({ results }: { results: MatchResult[] }) => (
           style={{ animationDelay: `${(i % 4) * 100}ms` }}
         >
           <div className="flex items-center justify-between gap-1 sm:gap-2">
-            {/* Equipo local */}
             <div className="flex items-center gap-1.5 flex-1 min-w-0">
               <ClubLogo clubName={match.home} size="xs" className="flex-shrink-0 sm:hidden" />
               <ClubLogo clubName={match.home} size="sm" className="flex-shrink-0 hidden sm:block" />
@@ -62,7 +57,6 @@ const MatchGrid = ({ results }: { results: MatchResult[] }) => (
               </span>
             </div>
 
-            {/* Marcador */}
             <div className="flex items-center gap-0.5 sm:gap-1 flex-shrink-0 px-1">
               <span
                 className={`text-base sm:text-lg font-heading font-bold w-6 sm:w-7 text-center rounded ${
@@ -81,7 +75,6 @@ const MatchGrid = ({ results }: { results: MatchResult[] }) => (
               </span>
             </div>
 
-            {/* Equipo visitante */}
             <div className="flex items-center gap-1.5 flex-1 min-w-0 justify-end">
               <span
                 className={`text-[11px] sm:text-sm leading-tight break-words text-right ${
@@ -95,7 +88,6 @@ const MatchGrid = ({ results }: { results: MatchResult[] }) => (
             </div>
           </div>
 
-          {/* Nota especial (ej: partido suspendido) */}
           {match.note && (
             <div className="mt-2 flex items-center gap-1.5">
               <span className="text-[10px] font-semibold uppercase tracking-wider text-orange-400 bg-orange-400/10 border border-orange-400/20 px-2 py-0.5 rounded-full">
@@ -128,10 +120,10 @@ const ResultsSection = () => {
             </span>
           </div>
           <h2 className="font-heading text-3xl md:text-5xl font-bold uppercase tracking-tight text-foreground">
-            Resultados — Fecha 7
+            Resultados — Novena Fecha
           </h2>
           <p className="text-muted-foreground text-sm mt-2">
-            Séptima fecha — 19 de abril de 2026 · Campeonato L.D.P. 2026
+            Novena fecha — 30 de abril de 2026 · Campeonato L.D.P. 2026
           </p>
         </div>
 

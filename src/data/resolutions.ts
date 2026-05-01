@@ -7,7 +7,6 @@ export interface DisciplinaryResolution {
 }
 
 export const resolutions: DisciplinaryResolution[] = [
-  // ── 05 Abr 2026 ──────────────────────────────────────────────
   {
     id: 1,
     title: "Resolución N° 22 — Serie A",
@@ -29,7 +28,6 @@ export const resolutions: DisciplinaryResolution[] = [
     summary: "Resolución del Tribunal Disciplinario correspondiente a la Serie C, quinta fecha del campeonato 2026.",
     pdfUrl: "/pdfs/resolucion-24-serie-c.pdf",
   },
-  // ── 07 Abr 2026 ──────────────────────────────────────────────
   {
     id: 4,
     title: "Resolución N° 25 — Serie D",
@@ -44,7 +42,6 @@ export const resolutions: DisciplinaryResolution[] = [
     summary: "Rectificación parcial de la Resolución N° 15. Se establece que el jugador Junior Iván Alcaraz Peña fue expulsado por doble amonestación y se adecua la sanción a 1 partido oficial.",
     pdfUrl: "/pdfs/resolucion-26-rectificacion-alcaraz.pdf",
   },
-  // ── 15 Abr 2026 ──────────────────────────────────────────────
   {
     id: 6,
     title: "Resolución N° 27 — Sumario Club Guaraní",
@@ -52,7 +49,6 @@ export const resolutions: DisciplinaryResolution[] = [
     summary: "Suspensión de 6 partidos y multa al jugador Luis Ramírez por agresión al árbitro. Multa de 10 jornales mínimos al Club Guaraní por invasión de cancha. Resultado Sport Unión 2-0 Guaraní mantenido.",
     pdfUrl: "/pdfs/resolucion-27-sumario-guarani.pdf",
   },
-  // ── 16 Abr 2026 ──────────────────────────────────────────────
   {
     id: 7,
     title: "Resolución N° 28 — Serie A",
@@ -99,22 +95,16 @@ export interface PlayerStatsData {
   redCards: PlayerStat[];
 }
 
+// Goleadores al cierre de la 9na fecha
 export const playerStats: PlayerStatsData = {
   topScorers: [
-    {
-      position: 1,
-      player: "Richard Araujo",
-      // Transferred — note displayed in UI
-      club: "Capitán Cristaldo",
-      value: 6,
-      note: "Transferido a Deportivo Santaní (Intermedia)",
-    },
-    { position: 2, player: "Brian Enciso", club: "12 de Agosto", value: 4 },
-    { position: 3, player: "Richard Benítez", club: "Mcal Estigarribia", value: 4 },
-    { position: 4, player: "José Barrios", club: "Libertad Ojopoi", value: 4 },
-    { position: 5, player: "Richard Báez", club: "Sport Unión", value: 3 },
-    { position: 6, player: "José Benítez", club: "Sport San Blas", value: 3 },
-    { position: 7, player: "Sandro Galeano", club: "Juventud", value: 3 },
+    { position: 1, player: "Jose Barrios",      club: "Libertad de Ojopoi",  value: 7 },
+    { position: 1, player: "Richard Baez",       club: "Sport Unión",          value: 7 },
+    { position: 3, player: "Ramon Ovando",       club: "Sol de Mayo",          value: 6 },
+    { position: 3, player: "Richard Araujo",     club: "C.Cristaldo",          value: 6 },
+    { position: 5, player: "Brian Enciso",       club: "12 de Agosto",         value: 5 },
+    { position: 5, player: "Richard Benitez",    club: "Mcal.Estigarribia",    value: 5 },
+    { position: 7, player: "Rodrigo Gonzalez",   club: "Sport San Blas",       value: 4 },
   ],
   bestPlayers: [
     { position: 1, player: "Por confirmar", club: "—", value: "MVP" },
