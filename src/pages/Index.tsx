@@ -1,6 +1,5 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import CampeonatoHonorBanner from "@/components/CampeonatoHonorBanner";
 import UpcomingMatches from "@/components/UpcomingMatches";
 import ResultsSection from "@/components/ResultsSection";
 import AboutSection from "@/components/AboutSection";
@@ -26,21 +25,17 @@ const Index = () => {
       {/* Hero */}
       <HeroSection />
 
-      {/* 1. Campeonato de Honor 2026 — Banner principal */}
-      <CampeonatoHonorBanner />
-      <Divider />
-
-      {/* 2. Próximos eventos — Fecha 7 */}
+      {/* 1. Próximos eventos — Décima Fecha */}
       <div style={{ background: "hsl(0 0% 7%)" }}>
         <UpcomingMatches />
       </div>
       <Divider />
 
-      {/* 3. Resultados — Fecha 6 */}
+      {/* 2. Resultados — Novena Fecha */}
       <ResultsSection />
       <Divider />
 
-      {/* 4. Resto del sitio */}
+      {/* 3. Resto del sitio */}
       <div style={{ background: "hsl(0 0% 7%)" }}>
         <AboutSection />
       </div>
