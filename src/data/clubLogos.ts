@@ -71,6 +71,9 @@ export const clubLogos: Record<string, string> = {
   "Libertad Y": libertadYhaka,
   "Libertad Yruguá": libertadYhaka,
   "Libertad Yrugua ": libertadYhaka,
+  "Libertad Yryguá": libertadYhaka,
+  "Libertad Yryguá ": libertadYhaka,
+  "Libertad Yrygua": libertadYhaka,
 
   // ── General Caballero ─────────────────────────────────────────
   "Gral. Caballero": generalCaballero,

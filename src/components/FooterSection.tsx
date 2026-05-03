@@ -70,9 +70,13 @@ const FooterSection = () => {
                 </li>
                 <li className="flex items-center gap-2">
                   <Mail className="w-4 h-4 text-secondary flex-shrink-0" aria-hidden="true" />
-                  <span className="text-muted-foreground/60 italic text-xs">
-                    [correo oficial — pendiente]
-                  </span>
+                  <a
+                    href="mailto:ligadeportivadepiribebuy@gmail.com"
+                    className="hover:text-secondary transition-colors text-sm break-all"
+                    aria-label="Enviar correo a la Liga Deportiva de Piribebuy"
+                  >
+                    ligadeportivadepiribebuy@gmail.com
+                  </a>
                 </li>
                 <li className="flex items-center gap-2">
                   <Facebook className="w-4 h-4 text-secondary flex-shrink-0" aria-hidden="true" />
