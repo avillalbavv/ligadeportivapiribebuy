@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import ResultsSection from "@/components/ResultsSection";
@@ -10,59 +11,88 @@ import SeriesSection from "@/components/SeriesSection";
 import ClubsSection from "@/components/ClubsSection";
 import NewsSection from "@/components/NewsSection";
 import FooterSection from "@/components/FooterSection";
+import FaseSelector, { type Fase } from "@/components/FaseSelector";
+import SegundaFaseSection from "@/components/SegundaFaseSection";
 
 const Divider = () => <div className="section-divider" />;
 
 const Index = () => {
+  const [fase, setFase] = useState<Fase>("primera");
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
       <HeroSection />
 
-      {/* Resultados — Décima Fecha (final) */}
-      <ResultsSection />
-      <Divider />
+      {/* Selector de fase */}
+      <FaseSelector faseActiva={fase} onChange={setFase} />
 
-      {/* Sobre la Liga */}
-      <div style={{ background: "hsl(0 0% 7%)" }}>
-        <AboutSection />
-      </div>
-      <Divider />
+      {/* ── PRIMERA FASE ─────────────────────────────────────────── */}
+      {fase === "primera" && (
+        <>
+          {/* Resultados — Décima Fecha (final) */}
+          <ResultsSection />
+          <Divider />
 
-      {/* Tabla de posiciones */}
-      <StandingsSection />
-      <Divider />
+          {/* Sobre la Liga */}
+          <div style={{ background: "hsl(0 0% 7%)" }}>
+            <AboutSection />
+          </div>
+          <Divider />
 
-      {/* Fixture */}
-      <div style={{ background: "hsl(0 0% 7%)" }}>
-        <FixtureSection />
-      </div>
-      <Divider />
+          {/* Tabla de posiciones */}
+          <StandingsSection />
+          <Divider />
 
-      {/* Resoluciones del Tribunal */}
-      <ResolucionesSection />
-      <Divider />
+          {/* Fixture */}
+          <div style={{ background: "hsl(0 0% 7%)" }}>
+            <FixtureSection />
+          </div>
+          <Divider />
 
-      {/* Estadísticas / Goleadores */}
-      <div style={{ background: "hsl(0 0% 7%)" }}>
-        <PlayerStatsSection />
-      </div>
-      <Divider />
+          {/* Resoluciones del Tribunal */}
+          <ResolucionesSection />
+          <Divider />
 
-      {/* Series */}
-      <SeriesSection />
-      <Divider />
+          {/* Estadísticas / Goleadores */}
+          <div style={{ background: "hsl(0 0% 7%)" }}>
+            <PlayerStatsSection />
+          </div>
+          <Divider />
 
-      {/* Clubes */}
-      <div style={{ background: "hsl(0 0% 7%)" }}>
-        <ClubsSection />
-      </div>
-      <Divider />
+          {/* Series */}
+          <SeriesSection />
+          <Divider />
 
-      <NewsSection />
+          {/* Clubes */}
+          <div style={{ background: "hsl(0 0% 7%)" }}>
+            <ClubsSection />
+          </div>
+          <Divider />
+
+          <NewsSection />
+        </>
+      )}
+
+      {/* ── SEGUNDA FASE ─────────────────────────────────────────── */}
+      {fase === "segunda" && (
+        <>
+          <SegundaFaseSection />
+
+          {/* Clubes — compartido */}
+          <div style={{ background: "hsl(0 0% 7%)" }}>
+            <ClubsSection />
+          </div>
+          <Divider />
+
+          <NewsSection />
+        </>
+      )}
+
       <FooterSection />
     </div>
   );
 };
 
 export default Index;
+

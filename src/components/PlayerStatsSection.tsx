@@ -40,10 +40,10 @@ const PlayerStatsSection = () => {
             </span>
           </div>
           <h2 className="font-heading text-3xl md:text-5xl font-bold uppercase tracking-tight text-foreground">
-            Estadísticas — 9na Fecha
+            Goleadores — 10ma Fecha
           </h2>
           <p className="text-muted-foreground text-sm mt-2">
-            Actualizado al cierre de la 9na fecha del Campeonato 2026.
+            Goleadores de la Liga Deportiva de Piribebuy al cierre de la décima fecha.
           </p>
         </div>
 
@@ -113,7 +113,7 @@ const PlayerStatsSection = () => {
           <div className="flex items-center gap-2 mb-4 pb-3 border-b border-border/30">
             <Goal className="w-4 h-4 text-secondary" />
             <h3 className="font-heading font-bold text-sm uppercase text-foreground">
-              Goleadores — Categoría Primera
+              Goleadores — Liga Deportiva de Piribebuy · Décima Fecha
             </h3>
           </div>
 
