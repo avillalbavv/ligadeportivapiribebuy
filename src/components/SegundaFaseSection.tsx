@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Trophy, Shield, CheckCircle2, Goal, BarChart3 } from "lucide-react";
+import { Trophy, Shield, Goal, BarChart3, Calendar, MapPin, Users } from "lucide-react";
 import ClubLogo from "./ClubLogo";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import {
@@ -8,7 +8,10 @@ import {
   resultsJuvenilFecha2F,
   standingsPrimera2F,
   standingsJuvenil2F,
+  proximosJuvenil2F,
+  proximosPrimera2F,
   type MatchResult2F,
+  type ProximoPartido,
 } from "@/data/segundaFase";
 import { type TeamStanding } from "@/data/standings";
 
@@ -115,14 +118,52 @@ const StandingsTable2F = ({ data }: { data: TeamStanding[] }) => (
 
 type Cat2F = "primera" | "juvenil";
 
+// ── Próximo Partido Card ──────────────────────────────────────────
+const ProximoPartidoCard = ({ partido }: { partido: ProximoPartido }) => (
+  <div className="glass-card p-3 sm:p-4 hover-lift">
+    <div className="text-[9px] font-bold uppercase tracking-widest text-secondary/70 mb-2">{partido.serie}</div>
+    <div className="flex items-center justify-between gap-1 sm:gap-2 mb-3">
+      <div className="flex items-center gap-1.5 flex-1 min-w-0">
+        <ClubLogo clubName={partido.home} size="xs" className="flex-shrink-0 sm:hidden" />
+        <ClubLogo clubName={partido.home} size="sm" className="flex-shrink-0 hidden sm:block" />
+        <span className="text-[11px] sm:text-sm leading-tight font-medium text-foreground">{partido.home}</span>
+      </div>
+      <div className="flex-shrink-0 px-2">
+        <span className="text-xs font-heading font-bold text-secondary/60 tracking-widest">VS</span>
+      </div>
+      <div className="flex items-center gap-1.5 flex-1 min-w-0 justify-end">
+        <span className="text-[11px] sm:text-sm leading-tight font-medium text-foreground text-right">{partido.away}</span>
+        <ClubLogo clubName={partido.away} size="xs" className="flex-shrink-0 sm:hidden" />
+        <ClubLogo clubName={partido.away} size="sm" className="flex-shrink-0 hidden sm:block" />
+      </div>
+    </div>
+    <div className="border-t border-border/20 pt-2 flex flex-wrap gap-x-4 gap-y-1">
+      <span className="flex items-center gap-1 text-[10px] text-muted-foreground">
+        <Calendar className="w-3 h-3 text-secondary/60 shrink-0" />
+        {partido.fecha} · {partido.hora}
+      </span>
+      <span className="flex items-center gap-1 text-[10px] text-muted-foreground">
+        <MapPin className="w-3 h-3 text-secondary/60 shrink-0" />
+        {partido.estadio}
+      </span>
+      <span className="flex items-center gap-1 text-[10px] text-muted-foreground">
+        <Users className="w-3 h-3 text-secondary/60 shrink-0" />
+        {partido.arbitros}
+      </span>
+    </div>
+  </div>
+);
+
 // ── Componente Principal ──────────────────────────────────────────
 const SegundaFaseSection = () => {
   const [cat, setCat] = useState<Cat2F>("primera");
   const [standingsCat, setStandingsCat] = useState<Cat2F>("primera");
+  const [proximosCat, setProximosCat] = useState<Cat2F>("primera");
   const { ref, visible } = useScrollReveal();
 
   const resultados = cat === "primera" ? resultsPrimeraFecha2F : resultsJuvenilFecha2F;
   const tabla = standingsCat === "primera" ? standingsPrimera2F : standingsJuvenil2F;
+  const proximos = proximosCat === "primera" ? proximosPrimera2F : proximosJuvenil2F;
 
   return (
     <div
@@ -288,29 +329,44 @@ const SegundaFaseSection = () => {
 
       <div className="section-divider" />
 
-      {/* ── Fixture Próximamente ──────────────────────────────────── */}
+      {/* ── Próximos Partidos ─────────────────────────────────────── */}
       <section className="section-padding" style={{ background: "hsl(0 0% 7%)" }}>
         <div className="container mx-auto">
           <div className="text-center mb-8">
             <div className="inline-flex items-center gap-2 mb-3">
-              <CheckCircle2 className="w-5 h-5 text-secondary" />
+              <Calendar className="w-5 h-5 text-secondary" />
               <span className="text-xs uppercase tracking-widest text-secondary font-semibold">
                 Programación
               </span>
             </div>
             <h2 className="font-heading text-3xl md:text-5xl font-bold uppercase tracking-tight text-foreground">
-              Fixture — Segunda Fase
+              Próximos Partidos
             </h2>
             <p className="text-muted-foreground text-sm mt-2">
-              Calendario de partidos de la segunda etapa.
+              Segunda Fecha — Segunda Fase · Jueves 14 de mayo de 2026
             </p>
           </div>
 
-          <div className="glass-card p-6 md:p-8 max-w-2xl mx-auto text-center">
-            <CheckCircle2 className="w-10 h-10 text-secondary/40 mx-auto mb-4" />
-            <p className="text-muted-foreground text-sm">
-              El fixture completo de la segunda fase estará disponible próximamente.
-            </p>
+          <div className="flex justify-center mb-6">
+            <div className="inline-flex glass rounded-lg p-1 gap-1">
+              {(["primera", "juvenil"] as Cat2F[]).map((c) => (
+                <button
+                  key={c}
+                  onClick={() => setProximosCat(c)}
+                  className={`px-4 md:px-6 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
+                    proximosCat === c ? "bg-primary text-primary-foreground shadow-md" : "text-muted-foreground hover:text-foreground"
+                  }`}
+                >
+                  {c === "primera" ? "Primera · 15:45 H" : "Juvenil · 13:45 H"}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-4xl mx-auto">
+            {proximos.map((partido, i) => (
+              <ProximoPartidoCard key={i} partido={partido} />
+            ))}
           </div>
         </div>
       </section>

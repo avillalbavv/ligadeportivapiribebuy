@@ -57,6 +57,35 @@ export const standingsPrimera2F: TeamStanding[] = [
   { pos: 12, team: "12 de Agosto",         pts: 0, pj: 1, pg: 0, pe: 0, pp: 1, gf: 0, gc: 2, dif: -2 },
 ];
 
+// ── Próximos Partidos Segunda Fecha — Segunda Fase ───────────────
+export interface ProximoPartido {
+  serie: string;
+  home: string;
+  away: string;
+  estadio: string;
+  arbitros: string;
+  fecha: string;
+  hora: string;
+}
+
+export const proximosJuvenil2F: ProximoPartido[] = [
+  { serie: "Serie A",      home: "Sport Unión",      away: "Atlético Independiente", estadio: "Independiente",        arbitros: "Círculo Liga Caacupeña",         fecha: "Jueves 14 de mayo", hora: "13:45 H" },
+  { serie: "Serie B",      home: "Capitán Cristaldo", away: "Sp. Itaguyrá",          estadio: "Capitán Cristaldo",    arbitros: "Círculo Liga Paraguarí",          fecha: "Jueves 14 de mayo", hora: "13:45 H" },
+  { serie: "Interserial",  home: "13 de Junio S.A.", away: "Juventud Cordillerana",  estadio: "Humaitá",               arbitros: "Círculo Federación Cordillera",   fecha: "Jueves 14 de mayo", hora: "13:45 H" },
+  { serie: "Serie C",      home: "Sol de Mayo",      away: "13 de Junio C.C.",       estadio: "Agustín Marín",        arbitros: "Círculo UFI",                    fecha: "Jueves 14 de mayo", hora: "13:45 H" },
+  { serie: "Serie D",      home: "1° de Marzo",      away: "12 de Agosto",           estadio: "Guaraní",              arbitros: "Círculo Federación Paraguarí",    fecha: "Jueves 14 de mayo", hora: "13:45 H" },
+  { serie: "Interserial",  home: "Sport San Blas",   away: "Libertad Ojopoi",        estadio: "Sport San Blas",       arbitros: "Círculo UFI",                    fecha: "Jueves 14 de mayo", hora: "13:45 H" },
+];
+
+export const proximosPrimera2F: ProximoPartido[] = [
+  { serie: "Serie A",      home: "Sport Unión",      away: "Mcal. Estigarribia",     estadio: "Independiente",        arbitros: "Círculo Liga Caacupeña",         fecha: "Jueves 14 de mayo", hora: "15:45 H" },
+  { serie: "Serie B",      home: "Capitán Cristaldo", away: "Sp. Itaguyrá",          estadio: "Capitán Cristaldo",    arbitros: "Círculo Liga Paraguarí",          fecha: "Jueves 14 de mayo", hora: "15:45 H" },
+  { serie: "Interserial",  home: "Humaitá",          away: "Juventud Cordillerana",  estadio: "Humaitá",               arbitros: "Círculo Federación Cordillera",   fecha: "Jueves 14 de mayo", hora: "15:45 H" },
+  { serie: "Serie C",      home: "Sol de Mayo",      away: "13 de Junio C.C.",       estadio: "Agustín Marín",        arbitros: "Círculo UFI",                    fecha: "Jueves 14 de mayo", hora: "15:45 H" },
+  { serie: "Serie D",      home: "Guaraní de Paso Hũ", away: "12 de Agosto",         estadio: "Guaraní",              arbitros: "Círculo Federación Paraguarí",    fecha: "Jueves 14 de mayo", hora: "15:45 H" },
+  { serie: "Interserial",  home: "Sport San Blas",   away: "Gral. Caballero",        estadio: "Sport San Blas",       arbitros: "Círculo UFI",                    fecha: "Jueves 14 de mayo", hora: "15:45 H" },
+];
+
 // ── Tabla de Posiciones Segunda Fase — Categoría Juvenil ─────────
 export const standingsJuvenil2F: TeamStanding[] = [
   { pos:  1, team: "12 de Agosto",          pts: 3, pj: 1, pg: 1, pe: 0, pp: 0, gf: 2, gc: 1, dif:  1 },
